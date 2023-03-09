@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel = "icon" href = 
+"https://i.ibb.co/rkzCnRv/icon-removebg-preview-1.png" 
+        type = "image/x-icon"> -->
+    <title>SLIET ALUMNI PORTAL</title>
+    <style>
+       /* * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+        
+        /* Slideshow container */
+        /*.slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* Next & previous buttons */
+        /*.prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        /*.next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        /*.prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* Caption text */
+        /*.text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        /*.numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        /*.dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        /*.fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+       /* @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }
+        body {
+  font-family: Helvetica, sans-serif;
+  padding: 5%;
+  text-align: center;
+  font-size: 50;
+}
+ 
+/* Styling the area of the slides */
+/*body {background-color:#D0D0D0}*/
+#slideshow {
+  overflow: hidden;
+  height: 300px;
+  width: 400px;
+  margin: 0 auto;
+}
+ 
+/* Style each of the sides
+with a fixed width and height */
+.slide {
+  float: left;
+  height: 300px;
+  width: 400px;
+}
+ 
+/* Add animation to the slides */
+.slide-wrapper {
+   
+/* Calculate the total width on the
+  basis of number of slides */
+  width: calc(400px * 6);
+ 
+/* Specify the animation with the
+  duration and speed */
+  animation: slide 20s ease infinite;
+}
+ 
+/* Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+  background: rgb(255, 255, 255);
+}
+ 
+.slide:nth-child(2) {
+  background: rgb(255, 255, 255);
+}
+ 
+.slide:nth-child(3) {
+  background: rgb(255, 255, 255);
+}
+ 
+.slide:nth-child(4) {
+  background: rgb(255, 255, 255);
+}
+.slide:nth-child(5) {
+  background: rgb(255, 255, 255);
+}
+.slide:nth-child(6) {
+  background: rgb(255, 255, 255);
+}
+ 
+/* Define the animation
+for the slideshow */
+@keyframes slide {
+   
+/* Calculate the margin-left for
+  each of the slides */
+  16% {
+    margin-left: 0px;
+  }
+ 
+  32% {
+    margin-left: calc(-400px * 1);
+  }
+ 
+  48% {
+    margin-left: calc(-400px * 2);
+  }
+ 
+  64% {
+    margin-left: calc(-400px * 3);
+  }
+  80% {
+    margin-left: calc(-400px * 4);
+  }
+ 
+  96% {
+    margin-left: calc(-400px * 5);
+  }
+}
+        </style>
+</head>
+<body class="text-center mx-4 space-y-2" >
+    <!-- <h1 class="et_pb_module_header">SANT LONGOWAL INSTITUTE OF ENGINEERING AND TECHNOLOGY</h1> -->
+    <!-- component -->
+<!-- AlpineJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.8.1/cdn.min.js" defer></script>
+
+<!-- Slider Component Container -->
+<div class="flex flex-col items-center justify-center mt-32" x-cloak x-data="appData()" x-init="appInit()">
+    <div class="flex flex-col">
+        <!-- Page Scroll Progress -->
+        <div class="fixed inset-x-0 top-0 z-50 h-0.5 mt-0.5
+            bg-blue-500" :style="`width: ${percent}%`"></div>
+
+        <!-- Navbar -->
+        <nav class="flex justify-around py-4 bg-black w-full
+            fixed top-0 left-0 right-0 z-10" >
+
+            <!-- Logo Container -->
+            <!-- <div class="flex items-center"> -->
+                <!-- Logo -->
+                <!-- <a class="cursor-pointer">
+                    <h3 class="text-2xl font-medium text-blue-500">
+                        <img class="h-10 object-cover"
+                            src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg" alt="Store Logo">
+                    </h3>
+                </a>
+            </div> -->
+            <!-- <div class="container clearfix et_menu_container"> -->
+                <div class="logo_container">
+        <span class="logo_helper"></span>
+        <a href="#">
+            <img src="https://slietalumni.in/wp-content/uploads/2023/03/cropped-sliet-circle-logo-.png" width="40" height="40" alt="Sliet Alumni Portal" id="logo" data-height-percentage="54" />
+        </a>
+    </div>
+
+            <!-- Links Section -->
+            <div class="items-center hidden space-x-8 lg:flex">
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300" href="home.html">
+                    HOME
+                </a>
+
+                <a class="flex text-gray-600 
+                    cursor-pointer transition-colors duration-300
+                    font-semibold text-blue-600" href="ouralumni2.html">
+                    OUR ALUMNI
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300" href="donate2.html">
+                    DONATE!
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300" href="alumniasso2.html">
+                    THE ALUMNI ASSOCIATION
+                </a>
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300" href="alumnievent2.html">
+                    ALUMNI EVENTS
+                </a>
+
+
+                
+            </div>
+
+            <!-- Icon Menu Section -->
+            <div class="flex items-center space-x-5">
+                <!-- Register -->
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300" href="reg2.html">
+
+                    <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 0L11.34 .03L15.15 3.84L16.5 2.5C19.75 4.07 22.09 7.24 22.45 11H23.95C23.44 4.84 18.29 0 12 0M12 4C10.07 4 8.5 5.57 8.5 7.5C8.5 9.43 10.07 11 12 11C13.93 11 15.5 9.43 15.5 7.5C15.5 5.57 13.93 4 12 4M12 6C12.83 6 13.5 6.67 13.5 7.5C13.5 8.33 12.83 9 12 9C11.17 9 10.5 8.33 10.5 7.5C10.5 6.67 11.17 6 12 6M.05 13C.56 19.16 5.71 24 12 24L12.66 23.97L8.85 20.16L7.5 21.5C4.25 19.94 1.91 16.76 1.55 13H.05M12 13C8.13 13 5 14.57 5 16.5V18H19V16.5C19 14.57 15.87 13 12 13M12 15C14.11 15 15.61 15.53 16.39 16H7.61C8.39 15.53 9.89 15 12 15Z" />
+                    </svg>
+
+                    Register
+                </a>
+
+
+                <!-- Login -->
+                <a class="flex text-gray-600 
+                    cursor-pointer transition-colors duration-300
+                    font-semibold text-blue-600" href="log2.html">
+
+                    <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M10,17V14H3V10H10V7L15,12L10,17M10,2H19A2,2 0 0,1 21,4V20A2,2 0 0,1 19,22H10A2,2 0 0,1 8,20V18H10V20H19V4H10V6H8V4A2,2 0 0,1 10,2Z" />
+                    </svg>
+
+                    Login
+                </a>
+            </div>
+            
+        </nav>
+    </div>
+
+    <!-- Dummy Scrollable Content -->
+    <!-- <h4 class="font-mono ...">SANT LONGOWAL INSTITUTE OF ENGINEERING AND TECHNOLOGY</h4> -->
+    <!-- <p class="text-4xl font-mono...">SANT LONGOWAL INSTITUTE OF ENGINEERING AND TECHNOLOGY</p> -->
+    <!-- <P style="color:rgb(243, 238, 238);"> .</P>
+    <P style="color:rgb(243, 238, 238);"> .</P>
+    <P style="color:rgb(243, 238, 238);">. </P>
+    <P style="color:rgb(243, 238, 238);"> .</P>
+     <P style="color:rgb(243, 238, 238);"> .</P> -->
+    <!-- <h1 class="text-green-600 text-3xl font-serif">
+        SANT LONGOWAL INSTITUTE OF ENGINEERING AND TECHNOLOGY -->
+    <!-- </h1>  --> 
+    
+    <!-- <b>Tailwind CSS Font Family Class</b> 
+    <div class="mx-24 bg-green-200">
+        <p class="font-serif  p-4">
+            Geeksforgeeks: A Computer Science portal for Geeks
+        </p> -->
+  
+    </div>
+
+    <!-- Notes -->
+    <!-- <P style="color:rgb(243, 238, 238);"> .</P>
+    <P style="color:rgb(243, 238, 238);"> .</P> -->
+    <P style="color:rgb(255, 255, 255);">. </P>
+    <P style="color:rgb(255, 255, 255);"> .</P> 
+    <!-- <P style="color:rgb(243, 238, 238);"> .</P> -->
+    <h1 class="text-green-600 text-3xl font-serif">
+        SANT LONGOWAL INSTITUTE OF ENGINEERING AND TECHNOLOGY
+    </h1> 
+    <HR>
+</div>
+<section class="text-gray-600 body-font">
+    <!-- <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 6</div>
+          <img src="C:\Users\91947\Downloads\NBA.jpg" style="width:100%">
+          <div class="text">NBA</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 6</div>
+          <img src="C:\Users\91947\Downloads\Azadi75Year.jpg" style="width:100%">
+          <div class="text">AZADI KA AMRIT MAHOTSAV</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 6</div>
+          <img src="C:\Users\91947\Downloads\LnT2022-1.jpg" style="width:100%">
+          <div class="text">PLACEMENTS</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 6</div>
+            <img src="C:\Users\91947\Downloads\DSC_1573-scaled.jpg" style="width:100%">
+            <div class="text">DIRECTOR</div>
+          </div>
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 6</div>
+            <img src="C:\Users\91947\Downloads\GCS-Placement-01.jpg" style="width:100%">
+            <div class="text">GCS-Placement</div>
+          </div>
+          <div class="mySlides fade">
+            <div class="numbertext">6 / 6</div>
+            <img src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/images.jpeg?w=332&ssl=1" style="width:100%">
+            <div class="text">PARADE</div>
+          </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+        </div> -->
+       
+	<!-- Define the slideshow container -->
+	<div id="slideshow">
+		<div class="slide-wrapper">
+			
+		<!-- Define each of the slides
+		and write the content -->
+		
+			<div class="slide">
+				<div class="numbertext">1 / 6</div>
+          <img src="https://i.ibb.co/PjySJ0Y/NBA.webp" style="width:100%">
+          <div class="text">NBA has approved all the UG courses of SLIET. Heartiest congratulations to all involved.</div>
+			</div>
+			<div class="slide">
+				<div class="numbertext">2 / 6</div>
+          <img src="https://i.ibb.co/t47Lyrj/Azadi75-Year.webp" style="width:100%">
+          <div class="text">SLIET actively participated in "AZADI KA AMRIT MAHOTSAV"</div>
+			</div>
+			<div class="slide">
+				<div class="numbertext">3 / 6</div>
+          <img src="https://i.ibb.co/N2b7VgM/Ln-T2022-1.webp" style="width:100%">
+          <div class="text">PLACEMENTS saw steep rise compared to previous years.</div>
+			</div>
+			<div class="slide">
+				<div class="numbertext">4 / 6</div>
+            <img src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/images.jpeg?w=332&ssl=1" style="width:100%">
+            <div class="text">SLIET is actively participating in all the extra cirricular activities.</div>
+			</div>
+      <div class="slide">
+				<div class="numbertext">DIRECTOR Prof. S. Jain had an impressive tenure</div>
+            <img src="https://i.ibb.co/SPnk1Kk/DSC-1573-scaled.webp" style="width:100%">
+            <!-- <div class="text">5/6</div> -->
+			</div>
+      <div class="slide">
+				<div class="numbertext">6 / 6</div>
+            <img src="https://i.ibb.co/LNbHkVP/GCS-Placement-01.webp" style="width:100%">
+            <div class="text">GCS-Placement 2022 </div>
+		</div>
+	</div>
+  <!-- <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left"></div> -->
+
+
+    <!-- <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+        <img alt="feature" class="object-cover object-center h-full w-full" src="https://www.macmillandictionary.com/external/slideshow/full/White_full.png">
+      </div> -->
+      <!-- <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div> -->
+          <HR>
+            <!-- <P style="color:rgb(243, 238, 238);">. </P> -->
+          
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="text-gray-600 body-font">
+    
+        <!-- <div class="flex flex-col sm:flex-row mt-10">
+          <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+            <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            
+          </div> -->
+          <!-- <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left"> -->
+            <p class="w3-serif"><b>Welcome to the Alumni Network of Sant Longowal Institute of Engineering and Technology, Longowal, India.</b> We would look forward to your continued interaction and association to help improve the quality of our academic programme, industry collaborations, and various facets of our operations to ensure continuous improvements and exemplary standards of services to our present and past student community.
+
+                Our alumni have played an important role in building the credibility of our university and have contributed immensely to the growth of the university. The alumni continue to bring laurels to our university. The university on its part is keen to strengthen the bonds with its alumni. Our new website has features that will ensure that alumni can register themselves and keep appraised of various activities. Your active participation and support in the activities of the SLIET Alumni Association and the website will help us work together to take SLIET forward in the years to come.
+                
+                We also look forward to feedback and suggestions from alumni on the website to carry forward this initiative. It is just a small step to bringing the alumni closer to their past. Please pass the word around to your friends and batch mates to go to our website and register in order to enjoy the benefits of keeping in touch. The alumni organize meetings and get together and publish online newsletters with the support of the university, thus strengthening and re-kindling the sense of community and companionship.</p>
+            
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font" >
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">THESE ARE THE POEPLE WHO ARE RESPONSIBLE FOR THE NEVER ENDING BOND BETWEEN OUR INSTITUTE AND ITS ALUMNIS</p>
+        <section class="text-gray-600 body-font">
+          <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/Dr.-Saxena-sir-768x488-300x191-1.jpg?resize=300%2C191&ssl=1">
+            <div class="text-center lg:w-2/3 w-full">
+              <h3 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Prof. Ravindra K. Saxena</h3>
+              <p class="mb-8 leading-relaxed">Professor (Mechanical Engineering) Head, Training and Placement and Chairman Alumni Association.</p>
+              <p >• Tel: +91 1672 253 133, 134</p>
+              
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/2">
+          <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/sukhcharansir.jpg?resize=150%2C150&ssl=1">
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-gray-900">Dr. Sukhcharn Singh</h2>
+              <h3 class="text-gray-500 mb-3">Professor (Food Engineering & Technology)</h3>
+              <p class="mb-4">Advisor and Member, Alumni Association</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2">
+          <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/gulshan.png?resize=150%2C150&ssl=1">
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-gray-900">Dr. Gulshan Kumar Jawa</h2>
+              <h3 class="text-gray-500 mb-3">Associate Professor (Chemical Engineering)</h3>
+              <p class="mb-4">Member, Alumni Association</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2">
+          <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/Dr_Jagdeep_singh-1-300x244-1.jpg?resize=300%2C244&ssl=1">
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-gray-900">Dr. Jagdeep Singh</h2>
+              <h3 class="text-gray-500 mb-3">Assistant Professor (Computer Science and Engineering)</h3>
+              <p class="mb-4">Member, Alumni Association</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2">
+          <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://i0.wp.com/slietalumni.in/wp-content/uploads/2023/02/divesh.jpg?resize=150%2C150&ssl=1">
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-gray-900">Mr. Divesh Bharti</h2>
+              <h3 class="text-gray-500 mb-3">Assistant Professor (Mechanical engineering) </h3>
+              <p class="mb-4">Member, Alumni Association</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <HR>
+  <!-- <p>¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦</p> -->
+  <footer >
+    
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24"> -->
+          <!-- <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path> -->
+        <!-- </svg> -->
+        <!-- <span class="ml-3 text-xl">Tailblocks</span> -->
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 Sant Longowal Institute of Engineering and Technology, Longowal —
+        <!-- <a href="https://twitter.com/SlietAlumniAssn" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a> -->
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500" href="https://www.facebook.com/slietalumniassociation/">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500" href="https://twitter.com/SlietAlumniAssn">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500" href="https://www.instagram.com/sliet_alumni_association/?hl=en">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500" href="https://www.linkedin.com/company/sliet-alumni-association/?originalSubdomain=in">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+<script>
+    const appData = () => {
+        return {
+            percent: 0,
+
+            appInit() {
+                // source: https://codepen.io/A_kamel/pen/qBmmGKJ
+                window.addEventListener('scroll', () => {
+                    let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+                        height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+                    this.percent = Math.round((winScroll / height) * 100);
+                });
+            },
+        };
+    };
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<!-- <script src="https://www.drv.tw/inc/wd.js?s=y2zv9i0g1uldprnvwunj1q"></script></body> -->
+</html>
